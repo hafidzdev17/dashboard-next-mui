@@ -18,7 +18,7 @@ export const items = [
   },
   {
     title: "Products",
-    path: dashboard.products,
+    path: dashboard.products.root,
     icon: (
       <SvgIcon fontSize="small">
         <ProductsIcon />
