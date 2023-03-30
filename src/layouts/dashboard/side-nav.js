@@ -125,7 +125,7 @@ export const SideNav = (props) => {
         open
         PaperProps={{
           sx: {
-            backgroundColor: "neutral.800",
+            backgroundColor: "background.sidenav",
             color: "common.white",
             width: 280,
           },
@@ -144,7 +144,7 @@ export const SideNav = (props) => {
       open={open}
       PaperProps={{
         sx: {
-          backgroundColor: "neutral.800",
+          backgroundColor: "background.sidenav",
           color: "common.white",
           width: 280,
         },
