@@ -125,6 +125,7 @@ export default function palette(themeMode) {
       paper: GREY[800],
       default: GREY[900],
       neutral: alpha(GREY[500], 0.16),
+      sidenav: GREY[800],
     },
     action: {
       ...COMMON.action,
