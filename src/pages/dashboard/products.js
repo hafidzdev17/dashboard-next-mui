@@ -2,8 +2,17 @@
 import React from "react";
 import Head from "next/head";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  SvgIcon,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  Button,
+  Skeleton,
+} from "@mui/material";
 import { ProductCard } from "../../sections/products";
+import PlusIcon from "@heroicons/react/24/solid/PlusIcon";
 
 const products = [
   {
@@ -54,6 +63,20 @@ const products = [
   },
 ];
 
+const SkeletonLoad = (
+  <>
+    {[...Array(12)].map((_, index) => (
+      <Grid item xs={12} sm={6} md={3} key={index}>
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          sx={{ paddingTop: "115%", borderRadius: 2 }}
+        />
+      </Grid>
+    ))}
+  </>
+);
+
 const Products = () => {
   return (
     <>
@@ -61,29 +84,42 @@ const Products = () => {
         <title>Products | Xetia Dashboard</title>
       </Head>
 
-      <Box
-        component={"main"}
-        sx={{
-          flexGrow: 1,
-          py: 8,
-        }}
-      >
-        <Container maxWidth="xl">
-          <Stack spacing={3}>
-            <Stack direction="row">
+      <Container maxWidth="xl">
+        <Container maxWidth="lg">
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            spacing={4}
+            sx={{ my: 5 }}
+          >
+            <Stack spacing={1}>
               <Typography variant="h4">Products</Typography>
             </Stack>
-
-            <Grid container spacing={3}>
-              {products.map((product) => (
-                <Grid xs={12} md={6} lg={3} key={product.id}>
-                  <ProductCard product={product} />
-                </Grid>
-              ))}
-            </Grid>
+            <div>
+              <Button
+                startIcon={
+                  <SvgIcon fontSize="small">
+                    <PlusIcon />
+                  </SvgIcon>
+                }
+                variant="contained"
+              >
+                Add
+              </Button>
+            </div>
           </Stack>
+
+          <Grid container spacing={3}>
+            {products.map((product) => (
+              <Grid key={product.id} item xs={12} sm={6} md={3}>
+                <ProductCard product={product} />
+              </Grid>
+            ))}
+
+            {/* {SkeletonLoad} */}
+          </Grid>
         </Container>
-      </Box>
+      </Container>
     </>
   );
 };

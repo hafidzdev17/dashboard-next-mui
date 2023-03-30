@@ -132,5 +132,5 @@ export default function palette(themeMode) {
     },
   };
 
-  return themeMode === "light" ? light : dark;
+  return themeMode === "light" ? dark : light;
 }
