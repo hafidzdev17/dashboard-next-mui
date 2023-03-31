@@ -1,7 +1,9 @@
-import { AuthGuard } from 'src/guards/auth-guard';
+/* eslint-disable react/display-name */
+import { AuthGuard } from "src/guards/auth-guard";
 
-export const withAuthGuard = (Component) => (props) => (
-  <AuthGuard>
+export const withAuthGuard = (Component) => (props) =>
+  (
+    // <AuthGuard>
     <Component {...props} />
-  </AuthGuard>
-);
+    // </AuthGuard>
+  );
