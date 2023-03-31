@@ -66,7 +66,7 @@ export const Layout = (props) => {
             },
           }}
         >
-          <Box sx={{ p: 3 }}>
+          <Box sx={{ p: 3, mb: 3 }}>
             <Typography
               align="center"
               color="inherit"
@@ -78,13 +78,11 @@ export const Layout = (props) => {
               variant="h1"
             >
               Welcome to{" "}
-              <Box component="a" sx={{ color: "#15B79E" }} target="_blank">
+              <Box component="a" sx={{ color: "primary.main" }} target="_blank">
                 Xetia.io
               </Box>
             </Typography>
-            <Typography align="center" sx={{ mb: 3 }} variant="subtitle1">
-              A professional kit that comes with ready-to-use MUI components.
-            </Typography>
+
             <img alt="" src="/assets/auth-illustration.svg" />
           </Box>
         </Grid>
